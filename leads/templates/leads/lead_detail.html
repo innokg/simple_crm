@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .lead {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 6px;
+            padding-right: 6px;
+            margin-top: 10px;
+            background-color: #f6f6f6;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/leads/">Go back to leads</a>
+    <h1>This is detail of {{ lead.first_name }}</h1>
+    <p>This persons age: {{ lead.age }}</p>
+    <p>The agent responsible for this lead is : {{ lead.agent }}</p>
+    <hr />
+
+    <button type="button">
+        <a href="/leads/{{ lead.pk }}/update"> update</a>   <!-- or you gonna use <a href="/leads/{{ lead.pk }}/update"> -->
+
+    </button>
+
+    <button type="button">
+        <a href="/leads/{{ lead.pk }}/delete"> delete</a>  <!-- or you gonna use <a href="/leads/{{ lead.pk }}/delete"> -->
+
+    </button>
+
+</body>
+</html>
