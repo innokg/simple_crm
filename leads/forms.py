@@ -15,6 +15,9 @@ class LeadModelForm(forms.ModelForm):
             'age',
             'agent',
         }
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['first_name'].widget.attrs.update({'class': 'my-custom-class'})
 
 
 
