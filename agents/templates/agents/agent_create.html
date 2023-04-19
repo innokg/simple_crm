@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content  %}
+    <a href="{% url 'agents:agent-list' %}">Go back to agents</a>
+    <hr />
+    <h1>Create new agent</h1>
+    <form method="post">
+        {% csrf_token %}   <!-- csrf_token is a security aspect of django -->
+        {{ form.as_p }}
+
+        <button type="submit"> Create a agent </button>
+    </form>
+
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+    </style>
+
+{% endblock content  %}
